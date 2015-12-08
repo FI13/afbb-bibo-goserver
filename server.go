@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/emicklei/go-restful"
-	"github.com/fi13/afbb-bibo-goserver/connection"
 	"log"
 	"net/http"
 	"strconv"
+
+	"github.com/emicklei/go-restful"
+	"github.com/fi13/afbb-bibo-goserver/connection"
 )
 
 import _ "github.com/go-sql-driver/mysql"
@@ -17,6 +18,8 @@ func main() {
 	wsContainer := restful.NewContainer()
 	login := LoginResource{}
 	login.Register(wsContainer)
+	user := UserResource{}
+	user.Register(wsContainer)
 
 	port := 8080
 	log.Printf("start listening on localhost:%v", port)

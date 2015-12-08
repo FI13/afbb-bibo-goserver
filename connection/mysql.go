@@ -17,6 +17,7 @@ func Setup() *gorp.DbMap {
 	} else {
 		MySqlConnection = &gorp.DbMap{Db: db, Dialect: gorp.MySQLDialect{}}
 		MySqlConnection.AddTableWithName(model.Curator{}, "benutzer")
+		MySqlConnection.AddTableWithName(model.Borrower{}, "ausleiher")
 	}
 	return MySqlConnection
 }
