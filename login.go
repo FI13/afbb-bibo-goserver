@@ -59,7 +59,9 @@ func (u LoginResource) login(req *restful.Request, resp *restful.Response) {
 	if err == nil && curator.ValidateHash(hash) {
 		log.Printf("login successfull")
 		object, _ := json.Marshal(curator)
-		resp.Write(append([]byte(randToken()+"\n"), object...))
+		resp.Write([]byte(randToken()))
+		resp.Write([]byte("\n"))
+		resp.Write(object)
 		return
 	}
 	resp.WriteErrorString(http.StatusUnauthorized, err.Error())
