@@ -2,9 +2,10 @@ package connection
 
 import (
 	"database/sql"
-	"github.com/coopernurse/gorp"
-	"github.com/fi13/afbb-bibo-goserver/model"
 	"log"
+
+	"github.com/fi13/afbb-bibo-goserver/model"
+	"github.com/go-gorp/gorp"
 )
 
 var MySqlConnection *gorp.DbMap

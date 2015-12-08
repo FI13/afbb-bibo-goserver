@@ -1,9 +1,10 @@
 package util
 
 import (
-	"github.com/emicklei/go-restful"
 	"log"
 	"net/http"
+
+	"github.com/emicklei/go-restful"
 )
 
 func ServiceResponse(response *restful.Response, object interface{}, err error) {
